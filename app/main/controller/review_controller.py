@@ -35,8 +35,8 @@ class ReviewList(Resource):
     def put(self):
         """ update a specific place """
         data = request.json
-        rid = request.rid
-        return update_review(rid,data)
+        
+        return update_review(request.args['rid'],data)
 
 @api.route('/')
 @api.param('place_id','Place id')
